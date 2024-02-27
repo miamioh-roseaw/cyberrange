@@ -9,7 +9,7 @@ pipeline {
         GITHUB_URL = 'https://github.com/miamioh-roseaw/cyberrange.git'
         
         // Define your Kubernetes cluster credentials
-        KUBECONFIG = credentials('roseaw-metal')
+        KUBECONFIG = credentials('roseaw-mesh')
     }
 
     stages {
