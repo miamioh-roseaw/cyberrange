@@ -28,6 +28,7 @@ spec:
   type: LoadBalancer 
   ports:
   - protocol: TCP
+    ip: 10.48.10.115
     port: 80
     targetPort: 5000
   selector:
