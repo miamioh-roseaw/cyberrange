@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: roseaw-cyberrange-deployment
+  name: flask-app-deployment
 spec:
   replicas: 2  # Number of NGINX pods to run
   selector:
@@ -13,7 +13,7 @@ spec:
         app: flask-app
     spec:
       containers:
-      - name: flask-app-container
+      - name: flask-app
         image: cithit/roseaw-cyberrange:latest
         ports:
         - containerPort: 5000  # Expose NGINX on port 5000      
