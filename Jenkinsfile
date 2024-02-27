@@ -4,7 +4,7 @@ pipeline {
     environment {
         // Define your DockerHub credentialsId, repo name, and tag name
         DOCKER_CREDENTIALS_ID = 'roseaw-dockerhub'
-        DOCKER_IMAGE = 'roseaw/cyberrange'
+        DOCKER_IMAGE = 'cithit/roseaw-cyberrange'
         IMAGE_TAG = 'latest'
         GITHUB_URL = 'https://github.com/miamioh-roseaw/cyberrange.git'
         
