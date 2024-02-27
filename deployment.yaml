@@ -13,26 +13,11 @@ spec:
         app: flask-app
     spec:
       containers:
-      - name: flask-app
+      - name: flask-app-container
         image: cithit/roseaw-cyberrange:latest
         ports:
         - containerPort: 5000  # Expose NGINX on port 5000      
----
-apiVersion: networking.k8s.io/v1
-kind: Ingress
-metadata:
-  name: flask-app
-spec:
-  rules: 
-  - host: 
-    http:
-      paths:
-      - path: 
-        pathType: ImplementationSpecific
-        backend: 
-          service:
-            name: flask-app-internal-service
-            port:
+
               number: 5000
 ---
 apiVersion: v1
