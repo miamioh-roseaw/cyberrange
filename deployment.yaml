@@ -33,7 +33,7 @@ spec:
           service:
             name: app-py-internal-service
             port:
-              number: 80
+              number: 5000
 ---
 apiVersion: v1
 kind: Service
@@ -44,7 +44,7 @@ spec:
   loadBalancerIP: 10.48.10.112
   ports:
   - protocol: TCP
-    port: 80
-    targetPort: 80
+    port: 5000
+    targetPort: 5000
   selector:
-    app: app=py 
+    app: app-py 
