@@ -41,7 +41,6 @@ metadata:
   name: app-py-internal-service
 spec:
   type: LoadBalancer 
-  loadBalancerIP: 10.48.10.112
   ports:
   - protocol: TCP
     port: 5000
