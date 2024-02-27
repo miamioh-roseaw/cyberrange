@@ -1,0 +1,46 @@
+<!DOCTYPE html
+<html lang="en">
+  <head>
+  <link rel="stylesheet" href="{{ url_for('static', filename='lab-style.css') }}">
+  </head>
+  <body>
+    <img src="{{ url_for('static', filename='mur-cr.jpg') }}" alt="MUR Cyber Range Logo" width="300" 
+    height="53" />
+    <h1>Lab 1.1</h1>
+<h2>Step 1.1.1</h2
+  <p>Click on LAB1 in the right pane.</p>
+<h2>Step 1.1.2</h2>
+<img src="{{ url_for('static', filename='play.png') }}" alt="Play Button">
+<p>Click the "Play Button" at the top of the toplogy window to START all devices in the topology.  
+  Make sure that the node indicators show green for all devices in the 
+  'Map Topology' pane. Close the topology pane when they do using the menu at the top right of the GNS3 screen.</p>
+  <img src="{{ url_for('static', filename='hamburger.png') }}" alt="Close the Map 'Topology' menu.">
+  <h2>Step 1.1.3</h2
+<p>Click the Topology icon to open all Console connections.</p>
+<img src="{{ url_for('static', filename='open.png') }}" alt="Open all Console connections">
+    <h2>Step 1.1.4</h2
+        <p>Then, when you are done, click the button to save your topologies.</p>
+        <button id="runScriptButton">Save Configurations</button>
+            <h2>Script Output:</h2>
+            <p><i>Wait a moment, then scroll down to make sure all configurations were saved!!!</i></p>
+            <pre id="scriptOutput"></pre>
+        <script>
+            document.getElementById('runScriptButton').addEventListener('click', function() {
+                fetch('/run_script', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ script_code: 'saveconfigs.py' }) 
+                })
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('scriptOutput').textContent = data;
+                });
+            });
+        </script>
+    </body>
+    </html>
+    
+</body>
+</html>
